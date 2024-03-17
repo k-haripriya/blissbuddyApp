@@ -4,7 +4,7 @@ import { styles } from '../styles'
 import { Strings } from '../../../res/Strings'
 
 const Question10 = () => {
-  const [ getRating, setRating ] = useState(0);
+  const [ getRating, setRating ] = useState(1);
   const rating = [1,2,3,4,5]
 
   const handleRating = (rate:number) =>{
@@ -18,7 +18,7 @@ const Question10 = () => {
 
         {rating.map((item,index)=>{
             return(
-                <TouchableOpacity style={getRating === item ? [styles.ratingButton,styles.activeRatingButton]:styles.ratingButton} onPress={()=>{handleRating(item)}}>
+                <TouchableOpacity key={index}style={getRating === item ? [styles.ratingButton,styles.activeRatingButton]:styles.ratingButton} onPress={()=>{handleRating(item)}}>
                     <Text style={getRating === item ? [styles.ratingtext,styles.activeratingText]:styles.ratingtext}>{item}</Text>
                 </TouchableOpacity>
             )

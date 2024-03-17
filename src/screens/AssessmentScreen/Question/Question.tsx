@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { styles } from '../styles'
 import { Images } from '../../../../assets/Images/Images'
 import Question1 from '../Question1/Question1'
@@ -12,21 +12,53 @@ import Question7 from '../Question7/Question7'
 import Question8 from '../Question8/Question8'
 import Question9 from '../Question9/Question9'
 import Question10 from '../Question10/Question10'
+import { QuestionComponents } from '../../../types/Types'
 
 const Question = () => {
+  const [ getQuestionNumber, setQuestionNumber ] = useState(1);
+  const handleQuestionNumber = () =>{
+    if(getQuestionNumber!=10)
+    {
+    setQuestionNumber(getQuestionNumber+1);
+    }
+    else{
+
+    }
+  }
+
+  const handleBack = ()=>{
+    if(getQuestionNumber>1)
+    {
+      setQuestionNumber(getQuestionNumber-1);
+    }
+  }
+  const questionComponents:QuestionComponents = {
+    1: Question1,
+    2: Question2,
+    3: Question3,
+    4: Question4,
+    5: Question5,
+    6: Question6,
+    7: Question7,
+    8: Question8,
+    9: Question9,
+    10: Question10,
+  };
+
+  const QuestionComponent = questionComponents[getQuestionNumber];
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>handleBack()}>
           <Image source={Images.backabutton}/>
         </TouchableOpacity>
         <Text style={styles.title}>Assessment</Text>
         <View style={styles.questionNumberView}>
-          <Text style={styles.questionNumber}>1/14</Text>
+          <Text style={styles.questionNumber}>{getQuestionNumber}/10</Text>
         </View>
       </View>
-      <Question10/>
-      <TouchableOpacity style={styles.continueButtonView}>
+      <QuestionComponent/>
+      <TouchableOpacity style={styles.continueButtonView} onPress={()=>handleQuestionNumber()}>
         <Text style={styles.continueText}>Continue</Text>
       </TouchableOpacity>
     </View>

@@ -25,6 +25,10 @@ export const Images = {
     docpres: require('./Png/docpres.png'),
     nomed: require('./Png/nomed.png'),
     pill: require('./Png/Pill.png'),
-    unavailable: require('./Png/unavailable.png')
+    unavailable: require('./Png/unavailable.png'),
+    home: require('./Png/Home.png'),
+    recc: require('./Png/Recc.png'),
+    community: require('./Png/Chat.png'),
+    profile: require('./Png/profile.png'),
 
 }

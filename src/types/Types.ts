@@ -11,3 +11,19 @@ export type SignUpScreenParams = {
     getPageType: string,
     handlePageAlter:Function
 }
+
+export interface QuestionComponents {
+    [key: number]: React.ComponentType<any>; 
+  }
+
+  export type BottomTabsParams = {
+    HomeScreen:undefined,
+    ProfileScreen:undefined,
+    CommunityScreen:undefined,
+    RecommendationScreen:undefined,
+}
+export type TabsType = {
+    route: keyof BottomTabsParams,
+    component: React.ComponentType<any>,
+    name:string
+}

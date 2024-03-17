@@ -9,11 +9,19 @@ const Question4 = () => {
     Height: 0,
   });
 
+  const calculateBMI = () =>{
+    const heightInMeters = inputValue.Height / 100;
+    
+    const bmi = inputValue.Weight / (heightInMeters * heightInMeters);
+    
+    return bmi;
+  }
+
   const handleTextInputChange = (key: string, value: string) => {
     const numberval = parseInt(value);
     let flag = false;
     const updatedQuestions = questions.map(question => {
-        if (question.key === key && numberval>99911) {
+        if (question.key === key && numberval>999) {
             flag = true;
             return { ...question, error: true };
         }
