@@ -21,6 +21,10 @@ export const Strings = {
     },
     questions:{
         question1:"What's your goal?",
-        question2:"What's your gender?"
+        question2:"What's your gender?",
+        question3:"What's your age?",
+        question4:"What's your weight?",
+        question5:"What's your Height?",
+        Question6:"How would you describe your mood?"
     }
 }

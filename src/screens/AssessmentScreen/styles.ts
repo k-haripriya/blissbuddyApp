@@ -49,7 +49,8 @@ export const styles = StyleSheet.create({
     question:{
         fontSize:28,
         fontFamily:'Ubuntu-BoldItalic',
-        color:Colors.black
+        color:Colors.black,
+        textAlign:'center'
     },
     answerView:{
         height:60,
@@ -125,5 +126,32 @@ export const styles = StyleSheet.create({
         fontSize:18,
         fontFamily:'Ubuntu-Medium',
         color:Colors.black
+    },
+    inputBox:{
+        backgroundColor:Colors.white,
+        padding:10,
+        marginTop:50,
+        elevation:5,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between',
+        paddingHorizontal:20
+    },
+    textInput:{
+        width:200,
+        color:Colors.textColor,
+        fontSize:16
+    },
+    value:{
+       fontSize:22,
+       color:Colors.black,
+       fontWeight:'700' 
+    },
+    errorText:{
+        color:Colors.continueButtonColor,
+        fontWeight:'900',
+        marginTop:10,
+        fontSize:16
     }
+    
 })
