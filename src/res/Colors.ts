@@ -15,5 +15,7 @@ export const Colors = {
     quesBackground:'#FFF9EF',
     quesColor2:'#F5E7C0',
     continueButtonColor:'#633838',
-    sandal:'#EFDDC1'
+    sandal:'#EFDDC1',
+    yes:'#BADD9F',
+    sandal2:'#CEA363'
 }

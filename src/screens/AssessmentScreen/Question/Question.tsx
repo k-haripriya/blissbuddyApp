@@ -7,6 +7,11 @@ import Question2 from '../Question2/Question2'
 import Question3 from '../Question3/Question3'
 import Question4 from '../Question4/Question4'
 import Question5 from '../Question5/Question5'
+import Question6 from '../Question6/Question6'
+import Question7 from '../Question7/Question7'
+import Question8 from '../Question8/Question8'
+import Question9 from '../Question9/Question9'
+import Question10 from '../Question10/Question10'
 
 const Question = () => {
   return (
@@ -20,7 +25,7 @@ const Question = () => {
           <Text style={styles.questionNumber}>1/14</Text>
         </View>
       </View>
-      <Question5/>
+      <Question10/>
       <TouchableOpacity style={styles.continueButtonView}>
         <Text style={styles.continueText}>Continue</Text>
       </TouchableOpacity>

@@ -18,6 +18,13 @@ export const Images = {
     male: require('./Png/male.png'),
     female: require('./Png/female.png'),
     maleIcon: require('./Png/MaleIcon.png'),
-    femaleIcon: require('./Png/FemaleIcon.png')
+    femaleIcon: require('./Png/FemaleIcon.png'),
+    doctor: require('./Png/doctor.png'),
+    happy: require('./Png/happy.png'),
+    sad: require('./Png/sad.png'),
+    docpres: require('./Png/docpres.png'),
+    nomed: require('./Png/nomed.png'),
+    pill: require('./Png/Pill.png'),
+    unavailable: require('./Png/unavailable.png')
 
 }

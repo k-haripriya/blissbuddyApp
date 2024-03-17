@@ -25,6 +25,11 @@ export const Strings = {
         question3:"What's your age?",
         question4:"What's your weight?",
         question5:"What's your Height?",
-        Question6:"How would you describe your mood?"
+        Question6:"How would you describe your mood?",
+        Question6I:"Have you sought Medical Help before?",
+        Question7:"Are you facing any physical distress?",
+        Question8:"How would you rate your sleep quality?",
+        Question9:"Are you taking any medications?",
+        Question10:"How would you rate you stress level?",
     }
 }

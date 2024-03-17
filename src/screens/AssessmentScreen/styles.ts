@@ -1,5 +1,8 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { Colors } from "../../res/Colors";
+
+const { width } = Dimensions.get('window');
+const itemWidth = width / 2 - 20;
 
 export const styles = StyleSheet.create({
     container:{
@@ -50,7 +53,8 @@ export const styles = StyleSheet.create({
         fontSize:28,
         fontFamily:'Ubuntu-BoldItalic',
         color:Colors.black,
-        textAlign:'center'
+        textAlign:'center',
+        marginHorizontal:20
     },
     answerView:{
         height:60,
@@ -152,6 +156,101 @@ export const styles = StyleSheet.create({
         fontWeight:'900',
         marginTop:10,
         fontSize:16
+    },
+    docimg:{
+        alignSelf:'center',
+        marginLeft:40
+    },
+    ynview:{
+        flexDirection:'row'
+    },
+    ynbutton:{
+        paddingVertical:10,
+        paddingHorizontal:50,
+        borderRadius:50,
+        marginHorizontal:10
+    },
+    ynText:{
+       fontSize:20,
+       fontWeight:'500',
+       color:Colors.black 
+    }, 
+    activeynbutton:{
+        elevation:5,
+        borderWidth:1,
+        borderColor:Colors.black
+    },
+    phview:{
+        marginHorizontal:80,
+    },
+    phyyesno:{
+        flexDirection:'row',
+        marginVertical:30,
+        padding:30,
+        justifyContent:"space-between",
+        alignItems:'center'
+
+    },
+    ansText:{
+        fontSize:22,
+        fontWeight:'700',
+    },
+    anstext2:{
+        fontSize:18,
+        width:200
+    },
+    medcontainer:{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
+    },
+    medView:{
+        width:itemWidth,
+        alignItems:'center',
+        marginVertical:10,
+        paddingVertical:30,
+        backgroundColor:Colors.sandal,
+        borderRadius:30
+    },
+    activemedView:{
+        backgroundColor:Colors.sandal2,
+        elevation:5
+    },
+    medText:{
+        color:Colors.black,
+        fontSize:16,
+        textAlign:'center',
+        margin:20
+    },
+    stressText:{
+        fontSize:81,
+        fontFamily:'Ubuntu-BoldItalic',
+        color:Colors.black,
+        // marginLeft:10
+    },
+    ratingView:{
+        padding:10,
+        backgroundColor:Colors.white,
+        borderRadius:50,
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
+    },
+    ratingButton:{
+        padding:20,
+        backgroundColor:Colors.white,
+        borderRadius:30
+    },
+    activeRatingButton:{
+        backgroundColor:Colors.red1,
+    },
+    ratingtext:{
+        fontSize:32
+    },
+    activeratingText:{
+        fontWeight:'900',
+        fontSize:35
     }
     
 })
