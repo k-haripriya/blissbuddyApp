@@ -5,5 +5,8 @@ export const RouterConstants ={
     Intro:'Intro',
     Question:'Question',
     MainScreen:'MainScreen',
-    
+    HomeScreen:'HomeScreen',
+    ProfileScreen:'ProfileScreen',
+    RecommendationScreen:'RecommendationScreen',
+    CommunityScreen:'CommunityScreen'
 }

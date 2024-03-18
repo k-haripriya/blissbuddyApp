@@ -30,5 +30,19 @@ export const Images = {
     recc: require('./Png/Recc.png'),
     community: require('./Png/Chat.png'),
     profile: require('./Png/profile.png'),
+    left: require('./Png/Left.png'),
+    customer: require('./Png/Customer.png'),
+    plus: require('./Png/plus.png'),
+    cup: require('./Png/cup.png'),
+    flame: require('./Png/flame.png'),
+    moon: require('./Png/moon.png'),
+    star: require('./Png/star.png'),
+    starcolor: require('./Png/starcolor.png'),
+    depressed: require('./Png/depressed.png'),
+    anxious: require('./Png/anxious.png'),
+    doubtful: require('./Png/doubtful.png'),
+    happy1: require('./Png/happy1.png'),
+    joyful: require('./Png/joyful.png'),
+    normal : require('./Png/normal.png')
 
 }

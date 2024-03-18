@@ -1,3 +1,5 @@
+import { ImageRequireSource } from "react-native";
+
 export type NavigationStackParams = {
     SplashScreen:undefined,
     SignUpScreen:undefined,
@@ -27,3 +29,11 @@ export type TabsType = {
     component: React.ComponentType<any>,
     name:string
 }
+
+export type NavBarType = {
+    icon:any,
+    title: string,
+    header?: string, 
+    handleNavigation :Function
+}
+
