@@ -1,11 +1,16 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styles } from './styles'
 import { Images } from '../../../../assets/Images/Images'
+import { getCurrentMood, postCurrentMood } from '../../../Api/Apicalls'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../redux/store'
 
 const MoodTracker = () => {
+  const user = useSelector((state:RootState)=>state.setuser)
   const String1 = 'Tell us how you\'re feeling today'
   const [ getKey, setKey ] = useState('')
+  const [ getShow, setShow ] = useState(false)
   const values = [
     {
         icon:Images.depressed,
@@ -32,8 +37,42 @@ const MoodTracker = () => {
         key:'joyful'
     }
   ]
+  const postApicall = async () =>{
+    try{
+      const res = await postCurrentMood(user.userId,getKey)
+      if(res?.status ===201)
+      {
+        getApiCall()
+      }
+
+    }catch(err)
+    {
+      console.log(err)
+    }
+  }
+
+  const getApiCall = async() =>{
+    try{
+      const res = await getCurrentMood(user.userId)
+      if(res?.data?.length === 0)
+      {
+        setShow(false)
+      }
+      else
+      {
+        setShow(true)
+      }
+
+    }catch(err)
+    {
+      console.log(err);
+    }
+  }
+  useEffect(()=>{
+    getApiCall()
+  })
   return (
-    <View style={styles.container}>
+   !getShow ? <View style={styles.container}>
       <Text style={styles.title}>{String1}</Text>
       <View style={styles.starView}>
         {
@@ -46,10 +85,10 @@ const MoodTracker = () => {
             })
         }
       </View>
-      <View style={styles.submitbtn}>
+      <TouchableOpacity style={styles.submitbtn} onPress={()=>postApicall()}>
         <Text style={styles.title}>Submit</Text>
-      </View>
-    </View>
+      </TouchableOpacity>
+    </View> :<></>
   )
 }
 

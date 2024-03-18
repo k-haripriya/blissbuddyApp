@@ -4,7 +4,7 @@ import { styles } from './styles'
 import { Images } from '../../../assets/Images/Images'
 import { Strings } from '../../res/Strings'
 import FieldContainer from '../../components/SignupPage/FieldContainer/FieldContainer'
-import { login, signup } from '../../Api/Apicalls'
+import { addStreak, login, signup, updateStreak } from '../../Api/Apicalls'
 import { useNavigation } from '@react-navigation/native'
 import { RouterConstants } from '../../res/RouterConstants'
 import Loader from '../../components/Common/Loader/Loader'
@@ -54,6 +54,8 @@ const SignUpScreen = () => {
         setIsLoading(false);
         if(res?.status === 201)
         {
+          const response = await addStreak(res?.data?.id)
+          console.log(response?.status)
           navigation.navigate(RouterConstants.Intro)
         }
         else{
@@ -75,6 +77,7 @@ const SignUpScreen = () => {
         if(res?.status === 200)
         {
           dispatch(setuser(res.data.id));
+          const response = await updateStreak(res.data.id);
           navigation.navigate(RouterConstants.MainScreen)
         }
         else{

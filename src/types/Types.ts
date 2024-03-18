@@ -59,3 +59,7 @@ export type  userInfoType ={
     stress_level: number;
 }
 
+export type streaksType = {
+    getStreak: number
+}
+

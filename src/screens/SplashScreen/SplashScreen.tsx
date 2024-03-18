@@ -20,13 +20,13 @@ const SplashScreen = () => {
    
     },1000)
     setTimeout(()=>{
-      if(user)
-      {
-        navigation.navigate(RouterConstants.MainScreen);
-      }
-      else{
+      // if(user.userId)
+      // {
+      //   navigation.navigate(RouterConstants.MainScreen);
+      // }
+      // else{
         navigation.navigate(RouterConstants.OnboardingScreen);
-      }
+      // }
    
     },2000)
 

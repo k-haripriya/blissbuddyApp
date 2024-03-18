@@ -17,7 +17,7 @@ const Stack = createNativeStackNavigator();
 const AppRoutes:React.FC<NavigationStackParams> = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={RouterConstants.SignUpScreen
+      <Stack.Navigator initialRouteName={RouterConstants.SplashScreen
       } >
         <Stack.Screen name={RouterConstants.SplashScreen} component={SplashScreen} options={{headerShown:false}} />
         <Stack.Screen name={RouterConstants.OnboardingScreen} component={OnbordingScreen} options={{headerShown:false}} />

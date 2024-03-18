@@ -4,5 +4,14 @@ export const API = {
 
     signup:'/auth/users/',
     login:'/app/login/',
-    userinfo:'/userinfo/create/'
+    userinfo:'/userinfo/create/',
+    addStreak :'/trackers/addstreak/',
+    updateStreak: '/trackers/streak/',
+    addwater: '/trackers/addwater/',
+    getwater:'/trackers/getwater/',
+    sleepduration: '/trackers/tracksleep/',
+    sleepaverage:'/trackers/getAverageSleep/',
+    checksleep :'/trackers/checksleep/',
+    moodtracker:'/trackers/trackmood/',
+    getcurrentmood :'/trackers/getMood/'
 }

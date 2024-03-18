@@ -27,7 +27,8 @@ export const styles = StyleSheet.create({
         lineHeight:20,
         fontSize:16,
         textAlign:'center',
-        color:Colors.black
+        color:Colors.black,
+        fontWeight:'700'
     },
     img:{
         marginTop:-20,
@@ -43,5 +44,15 @@ export const styles = StyleSheet.create({
         backgroundColor:Colors.introBackground,
         borderRadius:30,
         marginTop:10
+    },
+    averageSleepHours:{
+        flex:1,
+        backgroundColor:Colors.introBackground,
+        paddingVertical:10,
+        paddingHorizontal:30,
+        borderRadius:30,
+        marginTop:10,
+        alignItems:'center',
+        justifyContent:'center',
     }
 })

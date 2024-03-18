@@ -31,7 +31,8 @@ const Question = () => {
     }
     else{
       try{
-        const res:any = await userinfo(user,data)
+        console.log("user",user.userId)
+        const res:any = await userinfo(user.userId,data)
         if(res?.status==201)
         {
           navigation.navigate(RouterConstants.MainScreen)
