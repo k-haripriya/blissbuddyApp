@@ -4,7 +4,7 @@ import { styles } from './styles'
 import { Images } from '../../../../assets/Images/Images'
 
 const MoodTracker = () => {
-  const String1 = 'Tell us how your feeling Today'
+  const String1 = 'Tell us how you\'re feeling today'
   const [ getKey, setKey ] = useState('')
   const values = [
     {

@@ -43,6 +43,7 @@ export const Images = {
     doubtful: require('./Png/doubtful.png'),
     happy1: require('./Png/happy1.png'),
     joyful: require('./Png/joyful.png'),
-    normal : require('./Png/normal.png')
+    normal : require('./Png/normal.png'),
+    loader: require('./Png/loader.png'),
 
 }

@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
         backgroundColor:Colors.highlightEmoji
     },
     submitbtn:{
+        marginTop:10,
         padding:10,
         backgroundColor:Colors.red1,
         borderRadius:30

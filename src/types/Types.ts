@@ -11,7 +11,9 @@ export type NavigationStackParams = {
 export type SignUpScreenParams = {
     Fields: string[],
     getPageType: string,
-    handlePageAlter:Function
+    handlePageAlter:Function,
+    handleInputChange:Function,
+    handleSubmit:Function
 }
 
 export interface QuestionComponents {
@@ -35,5 +37,11 @@ export type NavBarType = {
     title: string,
     header?: string, 
     handleNavigation :Function
+}
+
+export type UserDataType = {
+    Email:string,
+    Name:string,
+    Password:string
 }
 

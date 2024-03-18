@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     },
     textInputView:{
         marginVertical:10,
-        paddingRight:200,
+        // paddingRight:200,
         paddingLeft:10,
         backgroundColor:Colors.white,
         borderRadius:10
