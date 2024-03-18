@@ -5,7 +5,8 @@ export type NavigationStackParams = {
     SignUpScreen:undefined,
     OnboardingScreen:undefined,
     Intro:undefined,
-    Question1:undefined
+    Question:undefined,
+    MainScreen:undefined
 }
 
 export type SignUpScreenParams = {
@@ -43,5 +44,18 @@ export type UserDataType = {
     Email:string,
     Name:string,
     Password:string
+}
+
+export type  userInfoType ={
+    goal: string;
+    gender: string;
+    age: number;
+    weight: number;
+    current_mood: string;
+    past_medical_help: string;
+    physical_stress: boolean;
+    sleepquality: string;
+    medications: string;
+    stress_level: number;
 }
 

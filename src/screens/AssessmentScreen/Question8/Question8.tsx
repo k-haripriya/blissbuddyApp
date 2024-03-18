@@ -2,12 +2,25 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React, { useState } from 'react';
 import {styles} from '../styles';
 import {Strings} from '../../../res/Strings';
+import { useDispatch } from 'react-redux';
+import { updateSleepQuality } from '../../../redux/slices/userInfo';
 
 const Question8 = () => {
   const [ getAnswer, setAnswer ] = useState(0);
   const answers = [2,4,5,6,8]
+  const dispatch = useDispatch();
   const handleAnswers= (text:number) =>{
     setAnswer(text)
+    if(text <=5)
+    {
+      dispatch(updateSleepQuality('bad'))
+    }
+    else
+    {
+      dispatch(updateSleepQuality('good'))
+
+    }
+
   }
   return (
     <View style={styles.questionContainer}>

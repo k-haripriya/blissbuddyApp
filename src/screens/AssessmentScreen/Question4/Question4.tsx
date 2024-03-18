@@ -2,12 +2,15 @@ import {View, Text, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import {styles} from '../styles';
 import {Strings} from '../../../res/Strings';
+import { useDispatch } from 'react-redux';
+import { updateWeight } from '../../../redux/slices/userInfo';
 
 const Question4 = () => {
   const [inputValue, setInputValue] = useState({
     Weight: 0,
     Height: 0,
   });
+  const dispatch = useDispatch();
 
   const calculateBMI = () =>{
     const heightInMeters = inputValue.Height / 100;
@@ -32,6 +35,10 @@ const Question4 = () => {
     if(!flag)
     {
         setInputValue({...inputValue,[key]:value})
+        if(key==='Weight')
+        {
+          dispatch(updateWeight(value))
+        }
     }
   };
   const [questions,setQuestions] =useState([

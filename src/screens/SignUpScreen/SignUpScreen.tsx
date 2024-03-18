@@ -4,10 +4,12 @@ import { styles } from './styles'
 import { Images } from '../../../assets/Images/Images'
 import { Strings } from '../../res/Strings'
 import FieldContainer from '../../components/SignupPage/FieldContainer/FieldContainer'
-import { signup } from '../../Api/Apicalls'
+import { login, signup } from '../../Api/Apicalls'
 import { useNavigation } from '@react-navigation/native'
 import { RouterConstants } from '../../res/RouterConstants'
 import Loader from '../../components/Common/Loader/Loader'
+import { useDispatch } from 'react-redux'
+import { setuser } from '../../redux/slices/setUserSlice'
 
 const SignUpScreen = () => {
   const [ getPageType, setPageType ] = useState('SignUp')
@@ -15,6 +17,7 @@ const SignUpScreen = () => {
   const [ getIsLoading, setIsLoading ] = useState(false);
 
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const [ getUserData, setUserData ] = useState({
     "Email":"",
@@ -37,7 +40,6 @@ const SignUpScreen = () => {
   }
 
   const handleInputChange = (field:string, text:string) =>{
-    console.log("field,text",field,text);
     setUserData({...getUserData,[field]:text})
   }
 
@@ -47,11 +49,33 @@ const SignUpScreen = () => {
       try{
         setIsLoading(true);
         const res:any = await signup(getUserData);
-        console.log("response in signup",res);
+        console.log(res?.data?.id);
+        dispatch(setuser( res?.data?.id));
         setIsLoading(false);
         if(res?.status === 201)
         {
           navigation.navigate(RouterConstants.Intro)
+        }
+        else{
+          Alert.alert("Please enter valid details")
+        }
+
+      }catch(err)
+      {
+        console.log("Error in calling signup",err)
+       
+      }
+    }
+    else if(getPageType === "Login")
+    {
+      try{
+        setIsLoading(true);
+        const res:any = await login(getUserData);
+        setIsLoading(false);
+        if(res?.status === 200)
+        {
+          dispatch(setuser(res.data.id));
+          navigation.navigate(RouterConstants.MainScreen)
         }
         else{
           Alert.alert("Please enter valid details")

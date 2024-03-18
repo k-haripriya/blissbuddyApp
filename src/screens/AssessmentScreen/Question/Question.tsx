@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, Image } from 'react-native'
+import { View, Text, TouchableOpacity, Image, RootTagContext } from 'react-native'
 import React, { useState } from 'react'
 import { styles } from '../styles'
 import { Images } from '../../../../assets/Images/Images'
@@ -13,16 +13,34 @@ import Question8 from '../Question8/Question8'
 import Question9 from '../Question9/Question9'
 import Question10 from '../Question10/Question10'
 import { QuestionComponents } from '../../../types/Types'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../../redux/store'
+import { userinfo } from '../../../Api/Apicalls'
+import { useNavigation } from '@react-navigation/native'
+import { RouterConstants } from '../../../res/RouterConstants'
 
 const Question = () => {
   const [ getQuestionNumber, setQuestionNumber ] = useState(1);
-  const handleQuestionNumber = () =>{
+  const data = useSelector((state:RootState) =>state.userInfo)
+  const user = useSelector((state:RootState)=>state.setuser)
+  const navigation = useNavigation();
+  const handleQuestionNumber =async() =>{
     if(getQuestionNumber!=10)
     {
     setQuestionNumber(getQuestionNumber+1);
     }
     else{
+      try{
+        const res:any = await userinfo(user,data)
+        if(res?.status==201)
+        {
+          navigation.navigate(RouterConstants.MainScreen)
+        }
 
+      }catch(err)
+      {
+        console.log(err);
+      }
     }
   }
 
