@@ -169,3 +169,26 @@ export const getCurrentMood = async(user:number ) =>{
         console.log(err);
     }
 }
+
+export const getRecommendationsApi = async(user:number)=>{
+    
+    try{
+        const response = await axios.get(API.baseURL + API.getRecommendations + user);
+        return response;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
+
+export const getChaptersApi = async(exercise:number) =>{
+    try{
+        const response = await axios.get(API.baseURL + API.getchapters + exercise);
+        return response;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}

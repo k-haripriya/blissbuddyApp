@@ -22,6 +22,7 @@ const SleepTracker = () => {
   const getAverageSleepApicall =async () =>{
     try{
       const res = await getAverageSleeptracker(user.userId)
+      console.log(res?.data?.average);
       setAverage(res?.data?.average)
     }catch(err)
     {
@@ -32,6 +33,10 @@ const SleepTracker = () => {
     try{
       const res = await getTodaysSleepEntry(user.userId)
       setShowRating(res?.data.today_entries_exist)
+      if(res?.data.today_entries_exist)
+      {
+        getAverageSleepApicall();
+      }
     }catch(err)
     {
       console.log(err)

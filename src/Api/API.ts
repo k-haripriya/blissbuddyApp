@@ -13,5 +13,7 @@ export const API = {
     sleepaverage:'/trackers/getAverageSleep/',
     checksleep :'/trackers/checksleep/',
     moodtracker:'/trackers/trackmood/',
-    getcurrentmood :'/trackers/getMood/'
+    getcurrentmood :'/trackers/getMood/',
+    getRecommendations :'/exercise/recommendations/',
+    getchapters:'/exercise/list/'
 }

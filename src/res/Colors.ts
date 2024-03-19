@@ -24,5 +24,6 @@ export const Colors = {
     fire2:'#FFE0C2',
     violet:'#DDD8FF',
     moodTracker:'#FFC7C7',
-    highlightEmoji :'#FF4C4C'
+    highlightEmoji :'#FF4C4C',
+    border:'#A8A8A8'
 }

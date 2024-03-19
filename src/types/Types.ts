@@ -1,4 +1,3 @@
-import { ImageRequireSource } from "react-native";
 
 export type NavigationStackParams = {
     SplashScreen:undefined,
@@ -61,5 +60,49 @@ export type  userInfoType ={
 
 export type streaksType = {
     getStreak: number
+}
+
+export type exerciseType = {
+    id: number,
+    exercise_name: string,
+    difficulty: string,
+    no_of_chapters: number,
+    duration: number,
+    repeat: number,
+    calories: number,
+    short_img: string,
+    long_img: string,
+    hashtag_id: number,
+    des:string
+}
+
+export type hashtagType = {
+    hashtag_name:string,
+    id:number
+}
+
+export type RecommendationType = {
+    exercises: exerciseType[]; 
+    hashtag: hashtagType; 
+};
+
+export type ExerciseComponentType = {
+    getData: RecommendationType;
+};
+
+export type ExerciseModalType = {
+    getId:number
+}
+
+export type chaptersType = {
+    chapter_name:string;
+    exercise_id:number;
+    id:number;
+    video:string
+}
+
+export type ChapterandExerciseType = {
+    exercise:exerciseType,
+    chapters:chaptersType[]
 }
 
