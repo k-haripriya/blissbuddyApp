@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API } from './API';
-import { UserDataType, userInfoType } from '../types/Types';
+import { UserDataType, communityPayloadType, messageType, userInfoType } from '../types/Types';
 
 export const signup = async (userData:UserDataType) =>{
     try{
@@ -214,4 +214,85 @@ export const getCommunityList = async()=>{
         console.log(err);
     }
 }
+export const getMyCommunityList = async(user:number)=>{
+    
+    try{
+        const response = await axios.get(API.baseURL + API.getMyCommunity + user);
+        return response;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
 
+export const enrollCommunityApi = async(cid:number,uid:number) =>{
+    const payload = {
+        community_id:cid,
+        user_id:uid
+    }
+    try{
+        const response = await axios.post(API.baseURL + API.enrollCommunity,payload)
+        return response;
+
+    }catch(err)
+    {
+        console.log(err);
+    }
+}
+
+export const getMessagesApi = async(user:number) =>{
+    try{
+
+        const response = await axios.get(API.baseURL + API.getMessages + user)
+        return response
+
+    }catch(err)
+    {
+        console.log(err)
+    }
+}
+
+export const userName = async(user:number) =>{
+
+    try{
+        const res = await axios.get(API.baseURL + API.getName+user)
+        return res
+
+    }catch(err)
+    {
+        console.log(err);
+    }
+
+}
+
+export const sendMessageApi = async(payload:messageType)=>{
+    console.log(payload)
+    try{
+        const res = await axios.post(API.baseURL + API.sendmessage , payload)
+        return res
+
+    }catch(err)
+    {
+        console.log("eer",err);
+
+    }
+}
+
+export const createcommunityApi = async(data:communityPayloadType)=>{
+    const payload = {
+        community_name:data['Community Name'],
+        admin_name:data['Admin Name'],
+        description:data['Description']
+    }
+    console.log("payload",payload)
+    try{
+        const res = await axios.post(API.baseURL + API.createCommunity , payload)
+        return res
+
+    }catch(err)
+    {
+        console.log("eer",err);
+
+    }
+}

@@ -1,0 +1,56 @@
+import { StyleSheet } from "react-native";
+import { Colors } from "../../../res/Colors";
+
+export const styles =StyleSheet.create({
+    modalView:{
+        flex:1,
+        backgroundColor:'rgba(0,0,0,0.5)',
+        alignItems:'center',
+        justifyContent:'center'
+    },
+    popupContainer:{
+        padding:10,
+        backgroundColor:Colors.white,
+    },
+    textinput:{
+        borderColor:Colors.border,
+        borderWidth:1,
+        margin:10,
+        width:300,
+        height:40,
+        borderRadius:10
+    },
+    addButton:{
+        padding:10,
+        alignItems:'center',
+        backgroundColor:Colors.continueButtonColor,
+        width:305,
+        alignSelf:'center'
+    },
+    title:{
+        textAlign:'center',
+        fontWeight:'900',
+        color:Colors.black,
+        fontSize:18
+    },
+    titleView:{
+        margin:10,
+        paddingVertical:15,
+        borderBottomWidth:1,
+        borderColor:Colors.border,
+        marginBottom:10
+    },
+    add:{
+        color:Colors.white,
+        fontWeight:'900'
+    },
+    backview:{
+        padding:10,
+        position:'absolute',
+        top:-35,
+        left:-20,
+        backgroundColor:Colors.white,
+        borderRadius:30,
+        elevation:5
+    }
+})

@@ -136,3 +136,47 @@ export type PodcastModalType = {
     item:podcastType,
     setModal:Function
 }
+
+export type CommunityType = {
+    admin_name: string,
+    community_name: string,
+    created_on: string,
+    description: string,
+    id: number
+}
+
+export type ChatModalType = {
+    getKey:string,
+    community:CommunityType,
+    setModal:Function,
+    getDisable:boolean
+}
+
+export type ChatType = {
+    community_id : number,
+    fromUser:number,
+    id:number,
+    isReply:boolean,
+    message:string,
+    repliedTo:number,
+    time:string,
+    toUser:number
+}
+
+export type messageType = {
+    message:string,
+    fromUser:number,
+    toUser:number,
+    isReply:boolean,
+    community_id:number,
+}
+
+export type addcommunityType = {
+    setAddCommunity:Function
+}
+
+export type communityPayloadType = {
+    "Admin Name": string;
+    "Community Name": string;
+    "Description": string;
+}

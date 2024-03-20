@@ -8,8 +8,10 @@ export const styles = StyleSheet.create({
     imageView:{
         padding:5,
         borderWidth:1,
-        borderRadius:10,
-        borderColor: '#A8A8A8'
+        // borderRadius:10,
+        borderColor: '#A8A8A8',
+        backgroundColor:Colors.white,
+        elevation:5
     },
     image:{
         width:120,

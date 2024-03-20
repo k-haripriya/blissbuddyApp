@@ -3,13 +3,16 @@ import { Colors } from "../../../res/Colors";
 
 export const styles = StyleSheet.create({
     exercisecard:{
-        padding:10,        
+        padding:10,    
+        marginVertical:10    
     },
     imageView:{
         padding:5,
         borderWidth:1,
-        borderRadius:10,
-        borderColor: '#A8A8A8'
+        // borderRadius:10,
+        borderColor: '#A8A8A8',
+        backgroundColor:'white',
+        elevation:5
     },
     image:{
         width:120,

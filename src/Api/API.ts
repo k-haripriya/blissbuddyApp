@@ -1,6 +1,5 @@
 export const API = {
-    baseURL:'http://192.168.0.209:8000',
-
+    baseURL:'http://192.168.1.8:8000',
 
     signup:'/auth/users/',
     login:'/app/login/',
@@ -18,4 +17,10 @@ export const API = {
     getchapters:'/exercise/list/',
     getPodcastrecommendation: '/exercise/reccomendPodcasts/',
     getCommunity: '/community/list/',
+    getMyCommunity:'/community/getMyCommunity/',
+    enrollCommunity:'/community/enroll/',
+    getMessages:'/community/getMessages/',
+    getName:'/app/name/',
+    sendmessage:'/community/sendMessage/',
+    createCommunity:'/community/create/',
 }

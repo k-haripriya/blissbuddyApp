@@ -140,12 +140,17 @@ const ExerciseModal: React.FC<ExerciseModalType> = props => {
         </View>
       )}
        {getVideoModl && (
-        <Modal visible={getVideoModl} animationType="slide">
-          <View style={{ flex: 1 }}>
-            <TouchableOpacity onPress={() => setVideoModal(false)}>
-              <Text style={{ textAlign: 'right', margin: 10 }}>Close</Text>
+        <Modal visible={getVideoModl} animationType="slide" transparent={true}>
+          <View style={{ backgroundColor:'rgba(0,0,0,0.5)'}}>
+            <TouchableOpacity onPress={() => setVideoModal(false)} style={{padding:10,backgroundColor:'white',alignSelf:"flex-start",borderRadius:30}}>
+              <Image source={Images.backabutton}/>
             </TouchableOpacity>
-            <Video source={{ uri: getSource }} style={{ flex: 1 }} />
+
+            <View style={styles.videoView}>
+
+            <Video source={{ uri: getSource }} style={{ height:'100%',width:'95%',marginHorizontal:10 }} resizeMode='contain'/>
+
+            </View>
           </View>
         </Modal>
       )}

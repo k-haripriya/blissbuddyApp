@@ -68,6 +68,8 @@ export const styles = StyleSheet.create({
         backgroundColor:'#E8E8E8',
         padding:10,
         borderRadius:10
+    },
+    videoView:{
     }
 
       

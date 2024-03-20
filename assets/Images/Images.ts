@@ -47,6 +47,8 @@ export const Images = {
     loader: require('./Png/loader.png'),
     play: require('./Png/Play.png'),
     replay :require('./Png/replay.png'),
-    forward : require('./Png/forward.png')
+    forward : require('./Png/forward.png'),
+    communityicon: require('./Png/community.png'),
+    sent: require('./Png/Sent.png')
 
 }
