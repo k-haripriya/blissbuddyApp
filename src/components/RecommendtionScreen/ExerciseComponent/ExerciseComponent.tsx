@@ -11,7 +11,8 @@ import ExerciseModal from '../ExerciseModal/ExerciseModal';
 const ExerciseComponent: React.FC<ExerciseComponentType> = props => {
   const {getData} = props;
   const hashtag: hashtagType = getData?.hashtag;
-  const exercise: exerciseType[] = getData?.exercises;
+  let exercise: exerciseType[] = getData?.exercises;
+
   
   const [ getModal, setModal ] = useState(false)
   const [ getId, setId ] = useState(0);
@@ -41,7 +42,7 @@ const ExerciseComponent: React.FC<ExerciseComponentType> = props => {
         })}
       </ScrollView>
       {
-        getModal && <ExerciseModal getId={getId}/>
+        getModal && <ExerciseModal getId={getId} setModal={setModal}/>
       }
     </View>
   );

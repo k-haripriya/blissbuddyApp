@@ -3,13 +3,17 @@ import React, { useEffect, useState } from 'react'
 import NavBar from '../../components/Common/NavBar/NavBar'
 import { Images } from '../../../assets/Images/Images'
 import { useNavigation } from '@react-navigation/native'
-import { getRecommendationsApi } from '../../Api/Apicalls'
+import { getPodcastRecommendationsApi, getRecommendationsApi } from '../../Api/Apicalls'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import ExerciseComponent from '../../components/RecommendtionScreen/ExerciseComponent/ExerciseComponent'
+import SwitchComponent from '../../components/RecommendtionScreen/SwitchComponent/SwitchComponent'
+import PodcastComponent from '../../components/RecommendtionScreen/PodcastComponent/PodcastComponent'
 
 const RecommendationScreen = () => {
   const [ getData, setData ] = useState([]);
+  const [ getKey, setKey ] = useState('Exercises');
+  const [ getPodcasts, setPodcasts ] = useState([])
   const navigation = useNavigation();
   const handleNavigation = () =>{
     navigation.goBack();
@@ -25,18 +29,38 @@ const RecommendationScreen = () => {
       console.log(err);
     }
   }
+  const PodcastsRecommendations = async() =>{
+    try{
+      const res = await getPodcastRecommendationsApi(user.userId)
+      console.log(res?.data?.results)
+      setPodcasts(res?.data?.results)
+    }catch(err)
+    {
+      console.log(err);
+    }
+  }
   useEffect(()=>{
+    
     Recommendations();
-  },[])
+    PodcastsRecommendations();
+  },[getKey])
   return (
     <>
     <NavBar title='Recommendations' icon={Images.left} handleNavigation={handleNavigation}/>
+    <SwitchComponent getKey={getKey} setKey={setKey}/>
     <ScrollView>
-      {getData?.map((item,index)=>{
+    {getKey === 'Exercises' ?
+      (getData?.map((item,index)=>{
         return(<View key={index}>
-          <ExerciseComponent getData={item}/>
+          
+          <ExerciseComponent getData={item} />
         </View>)
-      })}
+      })):(getPodcasts?.map((item,index)=>{
+        return(<View key={index}>
+          
+          <PodcastComponent item={item} />
+        </View>)
+      }))}
     </ScrollView>
     </>
   )

@@ -192,3 +192,14 @@ export const getChaptersApi = async(exercise:number) =>{
         console.log(err);
     }
 }
+export const getPodcastRecommendationsApi = async(user:number)=>{
+    
+    try{
+        const response = await axios.get(API.baseURL + API.getPodcastrecommendation + user);
+        return response;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}

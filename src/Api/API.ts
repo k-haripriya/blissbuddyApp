@@ -1,5 +1,5 @@
 export const API = {
-    baseURL:'http://192.168.1.8:8000',
+    baseURL:'http://192.168.0.209:8000',
 
 
     signup:'/auth/users/',
@@ -15,5 +15,6 @@ export const API = {
     moodtracker:'/trackers/trackmood/',
     getcurrentmood :'/trackers/getMood/',
     getRecommendations :'/exercise/recommendations/',
-    getchapters:'/exercise/list/'
+    getchapters:'/exercise/list/',
+    getPodcastrecommendation: '/exercise/reccomendPodcasts/',
 }

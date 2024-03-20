@@ -75,6 +75,16 @@ export type exerciseType = {
     hashtag_id: number,
     des:string
 }
+export type podcastType = {
+    id:number,
+    podacast_name:string,
+    podcast_description:string,
+    audio:string,
+    short_img: string,
+    long_img: string,
+    hashtag_id: number,
+    artist_name:string
+}
 
 export type hashtagType = {
     hashtag_name:string,
@@ -86,12 +96,18 @@ export type RecommendationType = {
     hashtag: hashtagType; 
 };
 
+export type PodcastRecommendationType = {
+    podcasts:podcastType[],
+    hashtag:hashtagType
+}
+
 export type ExerciseComponentType = {
     getData: RecommendationType;
 };
 
 export type ExerciseModalType = {
-    getId:number
+    getId:number,
+    setModal:Function
 }
 
 export type chaptersType = {
@@ -106,3 +122,16 @@ export type ChapterandExerciseType = {
     chapters:chaptersType[]
 }
 
+export type SwitchComponentType ={
+    getKey:string,
+    setKey:Function
+}
+
+export type PodcastComponentType = {
+    item:PodcastRecommendationType
+}
+
+export type PodcastModalType = {
+    item:podcastType,
+    setModal:Function
+}

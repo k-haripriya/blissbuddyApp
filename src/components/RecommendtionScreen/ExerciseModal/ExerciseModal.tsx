@@ -11,14 +11,18 @@ import Loader from '../../Common/Loader/Loader';
 import {capitalizeFirstLetter} from '../../../utils/common/Functions';
 import {styles} from './styles';
 import Video from 'react-native-video';
+import NavBar from '../../Common/NavBar/NavBar';
+import { Images } from '../../../../assets/Images/Images';
 
 const ExerciseModal: React.FC<ExerciseModalType> = props => {
-  const {getId} = props;
+  const {getId,setModal} = props;
   const [getExercise, setExercise] = useState<exerciseType>();
   const [getChapters, setChapters] = useState<chaptersType[]>();
   const [getLoader, setLoader] = useState(true);
   const [getTimer , setTimer ] = useState(30);
   const [ getcId, setcId] = useState(0);
+  const [ getVideoModl, setVideoModal ] = useState(false)
+  const [getSource,setSource] = useState('')
 
   const getChaptersApiCall = async () => {
     try {
@@ -49,10 +53,15 @@ const ExerciseModal: React.FC<ExerciseModalType> = props => {
         }, 1500); 
       }
   }
+
+  const handleNavigation = ()=>{
+    setModal(false)
+  }
   
   
   return (
     <Modal>
+      <NavBar icon={Images.left}  title={getExercise ?getExercise?.exercise_name:''} handleNavigation={handleNavigation}/>
       {getLoader ? (
         <Loader />
       ) : (
@@ -108,7 +117,10 @@ const ExerciseModal: React.FC<ExerciseModalType> = props => {
                     <Image source={{uri:getExercise?.short_img}} style={styles.chapterimg}/>
                     <View style={styles.nameView}>
                     <Text style={styles.chapterName}>{item.chapter_name}</Text>
-                    <TouchableOpacity onPress={()=>{}}>
+                    <TouchableOpacity onPress={()=>{
+                        setSource(item.video)
+                        setVideoModal(true)}
+                        }>
                         <Text>
                             See video {'>'}
                         </Text>
@@ -126,6 +138,16 @@ const ExerciseModal: React.FC<ExerciseModalType> = props => {
           
           </ScrollView>
         </View>
+      )}
+       {getVideoModl && (
+        <Modal visible={getVideoModl} animationType="slide">
+          <View style={{ flex: 1 }}>
+            <TouchableOpacity onPress={() => setVideoModal(false)}>
+              <Text style={{ textAlign: 'right', margin: 10 }}>Close</Text>
+            </TouchableOpacity>
+            <Video source={{ uri: getSource }} style={{ flex: 1 }} />
+          </View>
+        </Modal>
       )}
     </Modal>
   );
