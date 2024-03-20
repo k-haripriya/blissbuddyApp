@@ -7387,6 +7387,13 @@ react-native-ionicons@^4.6.5:
   resolved "https://registry.yarnpkg.com/react-native-ionicons/-/react-native-ionicons-4.6.5.tgz#b792ec8896381e67ff237eba955e38afe7ceb7a4"
   integrity sha512-s2Ia7M5t609LE9LWygMj3ALVPUlKhK7R9XcMb67fP4EYJv0oLcwg5pc+8ftv9XXaUuTW/WgL3zJlBYxAvtvMJg==
 
+react-native-progress@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-5.0.1.tgz#4e15258b5661c49bad74554352326ca540bb7c58"
+  integrity sha512-TYfJ4auAe5vubDma2yfFvt7ktSI+UCfysqJnkdHEcLXqAitRFOozgF/cLgN5VNi/iLdaf3ga1ETi2RF4jVZ/+g==
+  dependencies:
+    prop-types "^15.7.2"
+
 react-native-range-slider@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/react-native-range-slider/-/react-native-range-slider-0.1.2.tgz#f1bc020aa9094340a8ae22c25e22cbcb5af48710"
@@ -7414,6 +7421,11 @@ react-native-snap-carousel@latest:
   dependencies:
     prop-types "^15.6.1"
     react-addons-shallow-compare "15.6.2"
+
+react-native-sound-player@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/react-native-sound-player/-/react-native-sound-player-0.13.2.tgz#c4be0b9a36b13204940d03f787cbbc0c742c8907"
+  integrity sha512-m457mjp496sARAED7epYzbhorfiLZ3j6HzJn7zEL9RU+ZJKcans/0gFNUEBvlh31fSDZRliQ2WwE4mJ6836bNg==
 
 react-native-svg@^13.9.0:
   version "13.14.0"

@@ -47,7 +47,7 @@ const RecommendationScreen = () => {
   return (
     <>
     <NavBar title='Recommendations' icon={Images.left} handleNavigation={handleNavigation}/>
-    <SwitchComponent getKey={getKey} setKey={setKey}/>
+    <SwitchComponent getKey={getKey} setKey={setKey} keys={['Exercises','Podcasts']}/>
     <ScrollView>
     {getKey === 'Exercises' ?
       (getData?.map((item,index)=>{

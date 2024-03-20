@@ -203,3 +203,15 @@ export const getPodcastRecommendationsApi = async(user:number)=>{
         console.log(err);
     }
 }
+export const getCommunityList = async()=>{
+    
+    try{
+        const response = await axios.get(API.baseURL + API.getCommunity);
+        return response;
+    }
+    catch(err)
+    {
+        console.log(err);
+    }
+}
+

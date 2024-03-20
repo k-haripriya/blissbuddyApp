@@ -6,8 +6,7 @@ import CheckBox from '@react-native-community/checkbox'
 import { SwitchComponentType } from '../../../types/Types'
 
 const SwitchComponent:React.FC<SwitchComponentType> = (props) => {
-  const keys = ['Exercises','Podcasts']
-  const { getKey, setKey } = props
+  const { getKey, setKey,keys } = props
   return (
     <View style={styles.container}>
         {

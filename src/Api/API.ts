@@ -17,4 +17,5 @@ export const API = {
     getRecommendations :'/exercise/recommendations/',
     getchapters:'/exercise/list/',
     getPodcastrecommendation: '/exercise/reccomendPodcasts/',
+    getCommunity: '/community/list/',
 }

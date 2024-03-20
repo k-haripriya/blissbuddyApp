@@ -45,5 +45,8 @@ export const Images = {
     joyful: require('./Png/joyful.png'),
     normal : require('./Png/normal.png'),
     loader: require('./Png/loader.png'),
+    play: require('./Png/Play.png'),
+    replay :require('./Png/replay.png'),
+    forward : require('./Png/forward.png')
 
 }

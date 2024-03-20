@@ -124,7 +124,8 @@ export type ChapterandExerciseType = {
 
 export type SwitchComponentType ={
     getKey:string,
-    setKey:Function
+    setKey:Function,
+    keys:Array<string>,
 }
 
 export type PodcastComponentType = {
