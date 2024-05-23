@@ -49,6 +49,9 @@ export const Images = {
     replay :require('./Png/replay.png'),
     forward : require('./Png/forward.png'),
     communityicon: require('./Png/community.png'),
-    sent: require('./Png/Sent.png')
+    sent: require('./Png/Sent.png'),
+    nature:require('./Png/Nature.png'),
+    maleprofile: require('./Png/maleprofile.png'),
+    femaleprofile: require('./Png/femaleprofile.png')
 
 }

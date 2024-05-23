@@ -114,7 +114,7 @@ const ExerciseModal: React.FC<ExerciseModalType> = props => {
             getChapters?.map((item,index)=>{
                 return(<View style={styles.chaptersView}>
                     <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Image source={{uri:getExercise?.short_img}} style={styles.chapterimg}/>
+                    <Image source={{uri:item.profile}} style={styles.chapterimg}/>
                     <View style={styles.nameView}>
                     <Text style={styles.chapterName}>{item.chapter_name}</Text>
                     <TouchableOpacity onPress={()=>{

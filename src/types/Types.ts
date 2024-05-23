@@ -114,7 +114,8 @@ export type chaptersType = {
     chapter_name:string;
     exercise_id:number;
     id:number;
-    video:string
+    video:string;
+    profile:string;
 }
 
 export type ChapterandExerciseType = {

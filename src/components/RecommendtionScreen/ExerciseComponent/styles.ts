@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
         borderColor: '#A8A8A8',
         backgroundColor:'white',
         elevation:5
+        
     },
     image:{
         width:120,
