@@ -17,5 +17,13 @@ export const Colors = {
     continueButtonColor:'#633838',
     sandal:'#EFDDC1',
     yes:'#BADD9F',
-    sandal2:'#CEA363'
+    sandal2:'#CEA363',
+    blue2:'#C8F0EB',
+    blue3:'#A8D9EE',
+    fire:'#FFC195',
+    fire2:'#FFE0C2',
+    violet:'#DDD8FF',
+    moodTracker:'#FFC7C7',
+    highlightEmoji :'#FF4C4C',
+    border:'#A8A8A8'
 }

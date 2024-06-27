@@ -4,12 +4,16 @@ import {Picker} from 'react-native-wheel-pick';
 import { styles } from '../styles';
 import { Strings } from '../../../res/Strings';
 import { Colors } from '../../../res/Colors';
+import { useDispatch } from 'react-redux';
+import { updateAge } from '../../../redux/slices/userInfo';
 
 const Question3 = () => {
     const [ getAge, setAge ] = useState(0);
     const startValue = 10;
     const endValue = 100;
     const pickerData = [];
+
+    const dispatch = useDispatch();
 
     for (let i = startValue; i <= endValue; i++) {
         pickerData.push(i);
@@ -23,6 +27,8 @@ const Question3 = () => {
         pickerData={pickerData}
         onValueChange={(value: number) => {
           setAge(value)
+          dispatch(updateAge(value))
+
         }}
       />
     </View>

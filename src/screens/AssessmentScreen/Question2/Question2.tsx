@@ -3,12 +3,17 @@ import React, { useState } from 'react';
 import {styles} from '../styles';
 import {Strings} from '../../../res/Strings';
 import { Images } from '../../../../assets/Images/Images';
+import { useDispatch } from 'react-redux';
+import { updateGender } from '../../../redux/slices/userInfo';
 
 const Question2 = () => {
   const [ getGender, setGender ] = useState('');
+  const dispatch = useDispatch();
 
   const handleGender = (name:string) =>{
     setGender(name);
+    dispatch(updateGender(name))
+    
   }
   const gender = [{name:'Male',image:Images.male,icon:Images.maleIcon}, {name:'Female',image:Images.female,icon:Images.femaleIcon}];
   return (

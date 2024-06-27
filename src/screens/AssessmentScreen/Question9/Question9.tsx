@@ -1,16 +1,21 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React, { useState } from 'react';
+import React, { useDebugValue, useState } from 'react';
 import {styles} from '../styles';
 import {Strings} from '../../../res/Strings';
 import {Images} from '../../../../assets/Images/Images';
+import { useDispatch } from 'react-redux';
+import { updateMedications } from '../../../redux/slices/userInfo';
 
 const Question9 = () => {
   const [ getTitle, setTitle ] = useState('');
   const [ getKey, setKey ] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleAnswers = (title:string,key:string)=>{
     setTitle(title);
     setKey(key)
+    dispatch(updateMedications(title));
   }
   const answers = [
     {

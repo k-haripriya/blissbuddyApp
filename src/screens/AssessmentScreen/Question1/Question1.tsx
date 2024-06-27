@@ -3,13 +3,18 @@ import React, { useState } from 'react';
 import {styles} from '../styles';
 import {Strings} from '../../../res/Strings';
 import {Images} from '../../../../assets/Images/Images';
+import { useDispatch } from 'react-redux';
+import { updateGoal } from '../../../redux/slices/userInfo';
 
 const Question1 = () => {
+ 
+const dispatch = useDispatch();
 
 const [getAnswer, setAnswer] = useState('');
 
 const handleAnswers = (item:string)=>{
     setAnswer(item);
+    dispatch(updateGoal(item));
 }
   const answerList = [
     {answer: 'I wanna reduce stress', icon: Images.heart},

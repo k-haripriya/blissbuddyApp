@@ -3,5 +3,10 @@ export const RouterConstants ={
     OnboardingScreen:'OnboardingScreen',
     SignUpScreen: 'SignUpSreen',
     Intro:'Intro',
-    Question:'Question'
+    Question:'Question',
+    MainScreen:'MainScreen',
+    HomeScreen:'HomeScreen',
+    ProfileScreen:'ProfileScreen',
+    RecommendationScreen:'RecommendationScreen',
+    CommunityScreen:'CommunityScreen'
 }

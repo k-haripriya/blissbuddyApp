@@ -4,7 +4,7 @@ import {SignUpScreenParams} from '../../../types/Types';
 import {styles} from './styles';
 
 const FieldContainer: React.FC<SignUpScreenParams> = props => {
-  const {Fields, getPageType, handlePageAlter} = props;
+  const {Fields, getPageType, handlePageAlter,handleInputChange,handleSubmit} = props;
   return (
     <View style={styles.container}>
       <View style={styles.headerView}>
@@ -14,12 +14,12 @@ const FieldContainer: React.FC<SignUpScreenParams> = props => {
       {Fields.map((item, index) => {
         return (
           <View key={index} style={styles.textInputView}>
-            <TextInput placeholder={item}></TextInput>
+            <TextInput placeholder={item} onChangeText={(newText)=>handleInputChange(item,newText)} style={{width:250}}></TextInput>
           </View>
         );
       })}
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>
+        <Text style={styles.buttonText} onPress={()=>handleSubmit()}>
           {getPageType === 'SignUp' ? 'Register' : 'Login'}
         </Text>
       </TouchableOpacity>

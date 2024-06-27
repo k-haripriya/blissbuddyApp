@@ -6,10 +6,13 @@ import { styles } from './styles'
 import { Strings } from '../../res/Strings'
 import { useNavigation } from '@react-navigation/native'
 import { RouterConstants } from '../../res/RouterConstants'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 
 const SplashScreen = () => {
   const [ getStart, setStart ] = useState(true);
   const navigation = useNavigation();
+  const user = useSelector((state:RootState)=>state.setuser)
 
   useEffect(()=>{
     setTimeout(()=>{
@@ -17,7 +20,13 @@ const SplashScreen = () => {
    
     },1000)
     setTimeout(()=>{
-      navigation.navigate(RouterConstants.OnboardingScreen );
+      if(user.userId)
+      {
+        navigation.navigate(RouterConstants.MainScreen);
+      }
+      else{
+        navigation.navigate(RouterConstants.OnboardingScreen);
+      }
    
     },2000)
 

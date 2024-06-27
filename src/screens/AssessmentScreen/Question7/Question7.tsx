@@ -4,12 +4,24 @@ import {styles} from '../styles';
 import {Strings} from '../../../res/Strings';
 import {Colors} from '../../../res/Colors';
 import { Images } from '../../../../assets/Images/Images';
+import { useDispatch } from 'react-redux';
+import { updatePhysicalStress } from '../../../redux/slices/userInfo';
 
 const Question7 = () => {
   const [getAnswer, setAnswer ] = useState('');
+  const dispatch = useDispatch();
 
   const handleAnswer = (ans:string) =>{
     setAnswer(ans);
+    if(ans === 'Yes')
+    {
+      dispatch(updatePhysicalStress(true))
+    }
+    else
+    {
+      dispatch(updatePhysicalStress(false))
+
+    }
   }
   const answers = [
     {
